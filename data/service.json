@@ -1,0 +1,19 @@
+{ "last-updated": "123",
+  "data": {
+    "availability": {
+      "working-days": "",
+      "working-hours": ""
+    },
+    "location": {
+      "name": "",
+      "country": "PT",
+      "city": "",
+      "position": [
+        1,
+        2
+      ]
+    },
+    "data": {
+    }
+  }
+}
