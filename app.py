@@ -94,7 +94,7 @@ if prompt:
         user_prompt_validation(prompt)
     except ValidationException as e:
         st.error(str(e), icon="🚨")
-    else:                                 # TODO: ????
+    else:
         st.session_state.messages.append(HumanMessage(content=prompt))
         st.chat_message("user").write(prompt)
 

@@ -18,7 +18,7 @@ from utility_func import *
 # -------------------------------------------------------- DATABASE
 local_file = "car_appointments.sqlite"
 backup_file = "car_appointments.backup.sqlite"
-db = local_file     # <------------------------------------------------------- TODO: REMAKE
+db = local_file
 
 
 def create_db(db_file, db_backup_file) -> None:
@@ -343,8 +343,7 @@ class CheckUserAppointmentDataTool(BaseTool):
                 user_name, user_surname, user_email, user_phone_number = user_data[0]
 
                 final_prompt = f"Name:{user_name}, surname:{user_surname}, email:{user_email}, phone number:{user_phone_number}."
-                # TODO: SET CAR STATUS TO INACTIVE (CAN BE REACTIVATED ON NEXT SCHEDULING) AFTER CANCELING APPOINTMENT
-                #  IF NOT IN OTHER APPOINTMENT
+
                 # check appointment data
                 cursor.execute(f"""
                     SELECT datetime, problem, car_id FROM appointments 

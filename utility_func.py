@@ -100,7 +100,6 @@ def validate_datetime(date_time: str, datetime_format="%Y-%m-%dT%H:%M") -> None:
     except ValueError:
         raise ValidationException(f"Invalid datetime format. Must be {readable_datetime_format}.")
 
-    # # TODO: ADD TIMEZONE DIFFERENCE
     # date_time = f"{date} {time}"
     # date_time_format = f"{date_format} {time_format}"
     # if datetime.strptime(date_time, date_time_format) < datetime.now():
@@ -116,7 +115,6 @@ def validate_datetime(date_time: str, datetime_format="%Y-%m-%dT%H:%M") -> None:
     minimum_lead_time = timedelta(hours=2)
     maximum_advance_time = timedelta(days=60)
 
-    # TODO: FEB 6 15:00 NOT WORKING (new year not working)
     if datetime_datetime - now > maximum_advance_time:
         raise ValidationException("Appointments cannot be scheduled more than 60 days in advance")
     if date_datetime < now.date() or (date_datetime == now.date() and time_datetime < now.time()):
